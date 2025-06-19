@@ -106,6 +106,14 @@ class _MapPageState extends State<MapPage> {
                           'Precisión: ${locationProvider.currentLocation!.accuracy!.toStringAsFixed(1)} m',
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
+                      if (locationProvider.address != null)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'Dirección: ${locationProvider.address!}',
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                        ),
                     ] else
                       const Text('Sin ubicación disponible'),
                   ],
